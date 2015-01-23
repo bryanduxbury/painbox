@@ -107,7 +107,7 @@ module assembly() {
     translate([w / 2 + x * (5 + peltier_w / 2), d - peltier_d/2 - 6, peltier_h / 2]) {
       peltier();
 
-      translate([0, 0, peltier_h/2]) heatsink();
+      translate([0, 0, peltier_h/2]) !heatsink();
 
       color("blue")
       translate([0, 0, peltier_h/2 + 2]) linear_extrude(height=3) clamp_plate_2d();
