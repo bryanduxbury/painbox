@@ -7,11 +7,11 @@ class Thermistor {
 public:
   Thermistor(uint8_t analogPin, uint16_t refMv, uint16_t refOhms) {
     pin = analogPin;
-    ref_mv = ref_mv;
+    ref_mv = refMv;
     ref_ohms = refOhms;
   }
 
-  uint16_t getDegK() {
+  float getDegK() {
     return r2t(v2r(analogRead(pin)));
   }
 
@@ -20,8 +20,8 @@ private:
   uint16_t ref_mv;
   uint16_t ref_ohms;
 
-  int v2r(int sample) {
-    int mvSample = (int)((sample / 1023.0) * ref_mv);
+  float v2r(int sample) {
+    float mvSample = (sample / 1023.0) * ref_mv;
     return ref_ohms * (float)ref_mv / (float)mvSample - ref_ohms;
   }
 
