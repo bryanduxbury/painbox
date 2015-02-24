@@ -1,6 +1,7 @@
-tube_d = 3/8 * 25.4; // nom. measure.
+tube_d = 1/4 * 25.4; // nom. measure.
 // spacing = 3;
-spacing = (0.75 * 25.4 - tube_d);
+// spacing = (0.75 * 25.4 - tube_d);
+spacing = 2 * 25.4 / 2 / 3;
 echo("effective spacing: ", spacing);
 num_tubes = 10;
 
