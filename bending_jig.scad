@@ -1,9 +1,10 @@
-tube_d = 0.250 * 25.4;
+// tube_d = 0.250 * 25.4;
+tube_d = 0.375 * 25.4;
 
 grid_w = 100;
-num_turns = 10;
+num_turns = 8;
 
-turn_r = 12 / 2;
+turn_r = 15 / 2;
 
 screw_r = 3 / 2;
 
@@ -99,8 +100,8 @@ assembled();
 
 translate([0, 0, 20]) tube_mockup();
 
-!union() {
-  tube_mockup(1);
-  translate([0, (turn_r + tube_d/2), 0])
-    rotate([0, 0, 0]) tube_mockup(-1);
-}
+// union() {
+//   tube_mockup(1);
+//   translate([0, (turn_r + tube_d/2), 0])
+//     rotate([0, 0, 0]) tube_mockup(-1);
+// }
