@@ -10345,9 +10345,9 @@ Source: www.vishay.com .. rwm.pdf</description>
 <part name="P+8" library="supply1" deviceset="+12V" device=""/>
 <part name="GND14" library="supply1" deviceset="GNDA" device=""/>
 <part name="CONTROL" library="SparkFun-Connectors" deviceset="M04" device="POLAR"/>
-<part name="R4" library="rcl" deviceset="R-US_" device="M0805"/>
+<part name="R4" library="rcl" deviceset="R-US_" device="M0805" value="1.3k"/>
 <part name="GND6" library="supply1" deviceset="GNDA" device=""/>
-<part name="R5" library="rcl" deviceset="R-US_" device="M0805"/>
+<part name="R5" library="rcl" deviceset="R-US_" device="M0805" value="1.3k"/>
 <part name="GND9" library="supply1" deviceset="GNDA" device=""/>
 <part name="IC1" library="linear" deviceset="LM358" device="N"/>
 <part name="GND15" library="supply1" deviceset="GNDA" device=""/>
