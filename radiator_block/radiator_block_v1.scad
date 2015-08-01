@@ -14,6 +14,10 @@ block_border = 12;
 block_w = fin_l + block_border * 2;
 block_d = (fin_w + fin_sep) * num_fins + 2 * block_border;
 
+function radiator_block_w() = block_w;
+function radiator_block_d() = block_d;
+function radiator_block_h() = block_t;
+
 mounting_screw_r = 5.5/2; // M5 screw + clearance
 mounting_screw_head_r = 9.5/2; // measured + clearance
 
@@ -38,7 +42,7 @@ module _top_groove_negative() {
         _rounded_slot(fin_l, fin_w/2);
     translate([0, 0, - fin_skin_t/2])
       linear_extrude(height=fin_skin_t+0.1, center=true)
-        !_rounded_slot(fin_l + fin_shoulder*2, fin_w/2+fin_shoulder);
+        _rounded_slot(fin_l + fin_shoulder*2, fin_w/2+fin_shoulder);
   }
 }
 
