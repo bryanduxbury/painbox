@@ -32,16 +32,16 @@ void setup() {
   pinMode(COLD_OUT, OUTPUT);
 
   // start with heater/chiller off
-  analogWrite(0, 255);
-  analogWrite(0, 255);
+  analogWrite(HOT_OUT, 0);
+  analogWrite(COLD_OUT, 0);
 
   hot_target = 41.0;
   hot_milliamps = 0.0;
   cold_target = 18.0;
   cold_milliamps = 0.0;
 
-  // 3A range on hot output
-  hot_pid.SetOutputLimits(0, 3000);
+  // 4A range on hot output
+  hot_pid.SetOutputLimits(0, 4000);
   hot_pid.SetMode(AUTOMATIC);
 
   // 6A range on cold output
@@ -53,8 +53,10 @@ void loop() {
   updateTemps();
 
   // update PID computations
-  hot_pid.Compute();
-  cold_pid.Compute();
+  // hot_pid.Compute();
+  // cold_pid.Compute();
+  hot_milliamps = 4000;
+  cold_milliamps = 4000;
 
   // reset output current control
   setSinkMilliamps(HOT_OUT, hot_milliamps);
